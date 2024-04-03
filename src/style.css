@@ -3,6 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #ffffff; 
+  --text: #000000; 
+  --border: #cbd5e1; 
+  --primary: #dc2626; 
+  --secondary: #14b8a6; 
+  /* white */
+  /* black */
+  /* border-slate-300
+  #cbd5e1 
+  border-slate-600
+  #475569 */
+  /* text-red-600
+  #dc2626 */
+  /* text-teal-500
+  #14b8a6 */
+}
+
+.dark {
+  --bg: #000000; 
+  --text: #ffffff; 
+  --border: #475569; 
+  --primary: #dc2626; 
+  --secondary: #14b8a6; 
+}
+
 body {
   margin: 0;
 }

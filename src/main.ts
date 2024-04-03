@@ -8,3 +8,5 @@ const app = createApp(App)
 
 app.use(pinia)
 app.mount('#app')
+
+// https://www.youtube.com/watch?v=vIBKSmWAdIA
