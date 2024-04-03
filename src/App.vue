@@ -270,17 +270,20 @@ const state = reactive({
   count: 0,
   time: "h" + ":" + "m" + ":" + "s",
   timeFunction: () => {
-    const checkTime = (i: number) => {
-        if (i < 10) {
-            return "0" + i.toString();
-        } else {
-            return i;
-        }
-    }
+    // const checkTime = (i: number | string) => {
+    //     if (i < 10 || i == '1') {
+    //         return "0" + i.toString();
+    //     } else {
+    //         return i;
+    //     }
+    // }
     const today = new Date();
-    let h: number = checkTime(Number(today.getHours().toLocaleString('en-GB')));
-    let m: number = checkTime(Number(today.getMinutes().toLocaleString('en-GB')));
-    let s: number = checkTime(Number(today.getSeconds().toLocaleString('en-GB')));
+    // let h: number = checkTime(Number(today.getHours().toLocaleString('en-GB')));
+    // let m: number = checkTime(Number(today.getMinutes().toLocaleString('en-GB')));
+    // let s: number = checkTime(Number(today.getSeconds().toLocaleString('en-GB')));
+    let h: number = Number(today.getHours().toLocaleString('en-GB'));
+    let m: number = Number(today.getMinutes().toLocaleString('en-GB'));
+    let s: number = Number(today.getSeconds().toLocaleString('en-GB'));
     state.time = h + ":" + m + ":" + s;
     setTimeout(() => {
         state.timeFunction();
