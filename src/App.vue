@@ -272,11 +272,11 @@ const state = reactive({
   timeFunction: () => {
     const today = new Date();
     let h = Number(today.getHours().toLocaleString('en-GB'));
-    let nh = h < 10 ? "0" + h.toString : h.toString;
+    let nh = h < 10 ? "0" + h : h;
     let m = Number(today.getMinutes().toLocaleString('en-GB'));
-    let nm = m < 10 ? "0" + m.toString : m.toString;
+    let nm = m < 10 ? "0" + m : m;
     let s = Number(today.getSeconds().toLocaleString('en-GB'));
-    let ns = s < 10 ? "0" + s.toString : s.toString;
+    let ns = s < 10 ? "0" + s : s;
     state.time = nh + ":" + nm + ":" + ns;
     setTimeout(() => {
         state.timeFunction();
