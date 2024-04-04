@@ -310,13 +310,13 @@ const lightDarkMode = () => {
 
 <template>
 <div class="
-    bg-brand_bg text-brand_text 
+    bg-brand_bg animate-bg-fade text-brand_text 
     h-screen w-screen flex flex-col
     ">
     <div class="w-full h-full">
         <div class="flex w-8/12 h-full m-auto border-x border-brand_border">
-            <div class="block w-full m-auto border-y text-base text-right p-2 pb-4 border-brand_border">
-                <span class="p-2 cursor-pointer underline" :onclick="lightDarkMode">
+            <div class="block w-full m-auto lg:border-y text-base text-right p-2 pb-4 border-brand_border">
+                <span class="p-2 cursor-pointer underline hover:opacity-75 transition ease-in-out delay-150" :onclick="lightDarkMode">
                     {{ state.light ? "Dark Mode" : "Light Mode" }}
                 </span>
             </div>
@@ -356,7 +356,7 @@ const lightDarkMode = () => {
             border-x border-brand_border
             ">
                 <h2 class="
-                    text-2xl lg:leading-relaxed
+                    text-xl lg:text-2xl lg:leading-relaxed
                     p-2 pb-8
                     ">
                     {{ content.subtitle[0] }} <br>
@@ -408,7 +408,7 @@ const lightDarkMode = () => {
                         </span>
                         Links: 
                     </span>
-                    <a href="https://github.com/mejasonatkinson/" target="_blank">
+                    <a href="https://github.com/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out delay-150">
                         <!-- <i>GitHub</i> -->
                         <!-- Github -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -423,7 +423,7 @@ const lightDarkMode = () => {
                         </svg>
                         </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank">
+                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out delay-150">
                         <!-- <i>LinkedIn</i> -->
                         <!-- Linkedin -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -449,4 +449,6 @@ const lightDarkMode = () => {
 </template>
 
 
-<style scoped></style>
+<style scoped>
+
+</style>
