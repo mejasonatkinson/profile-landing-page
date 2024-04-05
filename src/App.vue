@@ -57,7 +57,7 @@ const lightDarkMode = () => {
 <template>
 <div class="
     bg-brand_bg animate-bg-fade text-brand_text 
-    h-screen w-screen flex flex-col
+    min-h-screen h-screen max-h-full w-screen flex flex-col
     ">
     <div class="w-full h-full">
         <div class="flex w-8/12 h-full m-auto border-x border-brand_border">
