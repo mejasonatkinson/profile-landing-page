@@ -1,269 +1,13 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
+import { useContentStore } from './stores/ContentStore';
+
+const contentStore = useContentStore();
 
 const date = new Date();
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const month = months[date.getMonth()];
-const fullYear = date.getFullYear();
-
-const content = {
-    title: ["Jason Atkinson,", "Creative Developer"],
-    month: month,
-    year: fullYear,
-    location: "London",
-    subtitle: [
-        "At my core I am a creative problem solver.",
-        "This passion and creative need to understand,", 
-        "is the driving force behind everything I do."
-    ],
-    sections: [
-        {
-            title: "Skills",
-            sections: [
-                {
-                    title: "Programming skills",
-                    skills: [
-                        "HTML", "CSS", "Less", "Sass", "Tailwind CSS", "JavaScript (including OOP)", "NodeJS", "VueJS", "StencilJS", "PHP (including OOP)", "WordPress Theme and Plugin use and development", "Craft CMS", "Yii"
-                    ]
-                },
-                {
-                    title: "Developer Tools",
-                    skills: [
-                        "Docker", "DDEV", "VMs", "VS Code", "Figma", "Adobe XD", "Zeplin", "Xcode", "BrowserStack"
-                    ]
-                },
-                {
-                    title: "Computer skills",
-                    skills: [
-                        "Working with both Windows and Apple operating platforms.", "Microsoft Office: Word, PowerPoint, Excel, and Outlook.", "Adobe: Photoshop, Illustrator, InDesign, XD, Dreamweaver and Premier.", "Microsoft Teams", "Slack", "Discord"
-                    ]
-                },
-                {
-                    title: "Personal Interest skills",
-                    skills: [
-                        "Typography", "Layout", "Interaction", "Art", "Design", "Photography", "Videography", "Illustration", "and Learning science"
-                    ]
-                }
-            ],
-            additionalInfo: "As much as these skills are important to me, my ability to pick up new skills quickly and easily is just as essential as such I have built up a methodology to do this."
-        },
-        {
-            title: "Education",
-            sections: [
-                {
-                    date: "2010 - 2013",
-                    courses: [
-                        {
-                            title: "BA(Hons) Graphic Design: New Media",
-                            grade: "[2:1]",
-                        },
-                    ],
-                    location: "University for the Creative Arts (UCA) Epsom",
-                },
-                {
-                    date: "2013 - 2014",
-                    courses: [
-                        {
-                            title: "Diploma in Web Design",
-                            grade: "[DISTINCTION][MERIT]",
-                        },
-                    ],
-                    location: "Open Awards",
-                },
-                {
-                    date: "2008 - 2010",
-                    courses: [
-                        {
-                            title: "BTEC National Diploma in Art and Design",
-                            grade: "[MERIT][MERIT][DISTINCTION]",
-                        },
-                    ],
-                    location: "University for the Creative Arts (UCA) Rochester",
-                },
-                {
-                    date: "2003 - 2008",
-                    courses: [
-                        {
-                            title: "GCSE's English, Maths, Statistics, Science, Geography, Art, Graphics",
-                            grade: "[2xB][5xC]",
-                        },
-                        {
-                            title: "DIDA in ICT",
-                            grade: "[Credit]",
-                        },
-                    ],
-                    location: "Hundred of Hoo School",
-                },
-            ]
-        },
-        {
-            title: "Extra Education",
-            sections: [
-                {
-                    date: "2023 - 2024",
-                    courses: [
-                        {
-                            title: "JavaScript Algorithms and Data Structures",
-                        },
-                        {
-                            title: "Back End Development",
-                        },
-                        {
-                            title: "Responsive Web Design",
-                        },
-                    ],
-                    location: "freecodecamp.org",
-                },
-                {
-                    date: "2017",
-                    courses: [
-                        {
-                            title: "The Online Marketing Fundamentals",
-                        },
-                    ],
-                    location: "Google",
-                },
-                {
-                    date: "2014 - 2019",
-                    courses: [
-                        {
-                            title: "Front End Web Development",
-                        },
-                        {
-                            title: "Data Analysis",
-                        },
-                        {
-                            title: "Web Design",
-                        },
-                    ],
-                    location: "teamtreehouse.com",
-                },
-            ],
-            additionalInfo: "Not only is development my job, but it is also my passion as hopefully I have shown by this section."
-        },
-        {
-            title: "Employment",
-            sections: [
-                {
-                    date: "2021 - 2024",
-                    roles: [
-                        {
-                            title: "Front-end Developer",
-                            location: "Sponge Learning (Digital Learning Provider) Europe",
-                            description: [
-                                "Managing environments for client preview and internal testing.",
-                                "Building and maintaining courses, apps, and websites; using various technologies to be installed onto the clients preferred hosting system.",
-                                "Working as part of a remote development team. Contributing to ticket requests, and internal tool development to improve proficiencies through collaboration."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    date: "2017 - 2022",
-                    roles: [
-                        {
-                            title: "Full-stack Web Developer",
-                            location: "Rock Mission (Growth Marketing Agency) London",
-                            description: [
-                                "Managing the hosting and security of multiple websites.",
-                                "Developing custom themes, when required and using a multi-purpose theme (Divi) for development when speed is of importance.",
-                                "Working with others to solve technique problems both remotely and in person.",
-                            ]
-                        },
-                        {
-                            title: "Full-stack Web Developer",
-                            location: "Bottomless Brunch (Restaurant booking Platform) London",
-                            description: [
-                                "Building the original custom theme and functionality which the platform is built on.",
-                                "Working using the Kanban board method to improve on the platform incrementally within a small remote development team as well as being responsible for the testing and deployment of the changes.",
-                            ]
-                        }
-                    ]
-                },
-                {
-                    date: "2017",
-                    roles: [
-                        {
-                            title: "Invigilator",
-                            location: "University of Kent (Academic Institution) Medway",
-                            description: [
-                                "Upholding examination conditions by being vigilant and contributing to the welfare of the students."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    date: "2016 - 2017",
-                    roles: [
-                        {
-                            title: "Web Designer",
-                            location: "Sitewizard Ltd (Web Design Agency) Maidstone",
-                            description: [
-                                "Designing, coding and deployment of websites in accordance to briefs as well as the maintenance and SEO improvements of existing websites."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    date: "2014 - 2016",
-                    roles: [
-                        {
-                            title: "Web Designer",
-                            location: "Puretone Ltd (Audiological company) Rochester",
-                            description: [
-                                "Maintaining multiple internal and customer facing websites.",
-                                "Managing Ad word Campaigns, reviewing analytic reports on sites and creating promotions which included designing email campaigns and scheduling pricing updates where needed and tracking its success or failure.",
-                            ]
-                        }
-                    ]
-                },
-                {
-                    date: "2013 - 2014",
-                    roles: [
-                        {
-                            title: "Sales Assistant",
-                            location: "Curry's / PC World; Dixons Group (Retail company) Rochester",
-                            description: [
-                                "Sales of electrical goods and reaching store targets"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            title: "Projects",
-            sections: [
-                // ???
-                // Safe Driving for Life
-                // NCSC
-                // Snap
-
-                // Bottomless Brunch
-            ]
-        },
-        {
-            title: "Posts",
-            sections: [
-                // ???
-            ]
-        },
-        {
-            title: "Talks",
-            sections: [
-                // ???
-            ]
-        },
-        {
-            title: "Interests",
-            content: [
-                "In my personal time I enjoy a variety of different hobbies.",
-                "I'm a big fan of Lego, especially the technic and space themed sets and enjoy art, reading and films.",
-                "I also enjoy researching how we learn, to try and improve my own methodology I use to learn new things.",
-            ]
-        },
-    ]
-};
+const year = date.getFullYear();
 
 const state = reactive({
   light: true,
@@ -289,9 +33,11 @@ state.timeFunction();
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark');
   localStorage.theme = 'dark';
+  state.light = false;
 } else {
   document.documentElement.classList.remove('dark');
   localStorage.theme = 'light'
+  state.light = true;
 }
 
 const lightDarkMode = () => {
@@ -316,7 +62,7 @@ const lightDarkMode = () => {
     <div class="w-full h-full">
         <div class="flex w-8/12 h-full m-auto border-x border-brand_border">
             <div class="block w-full m-auto lg:border-y text-base text-right p-2 pb-4 border-brand_border">
-                <span class="p-2 cursor-pointer underline hover:opacity-75 transition ease-in-out delay-150" :onclick="lightDarkMode">
+                <span class="p-2 cursor-pointer underline hover:opacity-75 transition ease-in-out" :onclick="lightDarkMode">
                     {{ state.light ? "Dark Mode" : "Light Mode" }}
                 </span>
             </div>
@@ -337,13 +83,13 @@ const lightDarkMode = () => {
                 inline-block
                 text-brand_primary
                     ">
-                    {{ content.title[0] + '&nbsp;' }}
+                    {{ contentStore.title[0] + '&nbsp;' }}
                 </span>
                 <span class="
                 inline-block
                 text-brand_secondary
                     ">
-                    {{ content.title[1] }}
+                    {{ contentStore.title[1] }}
                 </span>
             </h1>
             </div>
@@ -359,9 +105,9 @@ const lightDarkMode = () => {
                     text-xl lg:text-2xl lg:leading-relaxed
                     p-2 pb-8
                     ">
-                    {{ content.subtitle[0] }} <br>
-                    {{ content.subtitle[1] }}
-                    {{ content.subtitle[2] }}
+                    {{ contentStore.subtitle[0] }} <br>
+                    {{ contentStore.subtitle[1] }}
+                    {{ contentStore.subtitle[2] }}
                 </h2>
             </div>    
         </div>
@@ -379,13 +125,13 @@ const lightDarkMode = () => {
                         {{ state.time }}, 
                     </span>
                     <span>
-                        {{ content.month }}, 
+                        {{ month }}, 
                     </span>
                     <span>
-                        {{ content.year }}, 
+                        {{ year }}, 
                     </span>
                     <span>
-                        {{ content.location }}.
+                        {{ contentStore.location }}.
                     </span>
                 </p>
             </div>
@@ -408,7 +154,7 @@ const lightDarkMode = () => {
                         </span>
                         Links: 
                     </span>
-                    <a href="https://github.com/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out delay-150">
+                    <a href="https://github.com/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out">
                         <!-- <i>GitHub</i> -->
                         <!-- Github -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -423,7 +169,7 @@ const lightDarkMode = () => {
                         </svg>
                         </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out delay-150">
+                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out">
                         <!-- <i>LinkedIn</i> -->
                         <!-- Linkedin -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -451,4 +197,4 @@ const lightDarkMode = () => {
 
 <style scoped>
 
-</style>
+</style>./stores/contentStore
