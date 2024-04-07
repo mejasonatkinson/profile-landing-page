@@ -61,9 +61,15 @@ const lightDarkMode = () => {
     ">
     <div class="w-full h-full">
         <div class="flex w-8/12 h-full m-auto border-x border-brand_border">
-            <div class="block w-full m-auto lg:border-y text-base text-right p-2 pb-4 border-brand_border">
-                <span class="p-2 cursor-pointer underline hover:opacity-75 transition ease-in-out" :onclick="lightDarkMode">
-                    {{ state.light ? "Dark Mode" : "Light Mode" }}
+            <div class="block w-full m-auto print:border-y lg:border-y text-base text-right p-2 pb-4 border-brand_border">
+                <span class="inline-block font-semibold p-2 print:hidden">
+                    <span>//</span> <span class="cursor-pointer hover:opacity-75 transition ease-in-out"
+                        :onclick="lightDarkMode">{{ state.light ? "Dark Mode" : "Light Mode" }}</span>
+                </span>
+                <span class="inline-block font-semibold p-2 ">
+                    <span>//</span> <span class="text-brand_primary">Email:</span> <a :href="'mailto:' + contentStore.email"
+                        class="text-brand_secondary cursor-pointer hover:opacity-75 transition ease-in-out">{{
+                        contentStore.email }}</a>
                 </span>
             </div>
         </div>

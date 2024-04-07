@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'print': {'raw': 'print'},
+        // => @media  print { ... }
+      },
       colors: {
         brand_bg: 'var(--bg_primary)',
         brand_text: 'var(--text)',

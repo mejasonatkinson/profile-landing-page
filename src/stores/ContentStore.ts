@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useContentStore = defineStore('contentStore', {
   state: () => ({
+    email: "me@jasonatkisnon.co.uk",
     title: ["Jason Atkinson,", "Creative Developer"],
     location: "London",
     subtitle: [
