@@ -71,7 +71,7 @@ const lightDarkMode = () => {
         <div class="flex w-8/12 h-full m-auto  ">
             <div class="block w-full m-auto  text-base text-right ">
                 <span class="inline-block font-semibold p-2 ">
-                    <span>//</span> <span class="text-brand_primary">Email:</span> <a :href="'mailto:' + contentStore.email"
+                    <span>//</span> <span class="text-brand_primary font-serif">Email:</span> <a :href="'mailto:' + contentStore.email"
                         class="text-brand_secondary cursor-pointer hover:opacity-75">{{
                         contentStore.email }}</a>
                 </span>
@@ -82,12 +82,13 @@ const lightDarkMode = () => {
         <div class="
              
             ">
-            <div class="
+            <div class=" 
             w-8/12 m-auto
              
             ">
             <h1 class="
             text-4xl lg:text-6xl p-2 pb-12 
+            font-serif
             ">
                 <span class="
                 inline-block
