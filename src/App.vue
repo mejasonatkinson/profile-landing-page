@@ -55,7 +55,7 @@ const lightDarkMode = () => {
 </script>
 
 <template>
-<span :onclick="lightDarkMode" class="absolute top-0 right-0 cursor-pointer hover:opacity-75 border-b border-l p-4 border-brand_border print:hidden">
+<span :onclick="lightDarkMode" class="absolute top-0 right-0 cursor-pointer hover:opacity-75   p-4  print:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" :class="state.light ? 'inline' : 'hidden'">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
     </svg>
@@ -68,11 +68,11 @@ const lightDarkMode = () => {
     min-h-screen h-screen max-h-full w-screen flex flex-col
     ">
     <div class="w-full h-full">
-        <div class="flex w-8/12 h-full m-auto border-x border-brand_border">
-            <div class="block w-full m-auto print:border-y lg:border-y text-base text-right border-brand_border">
+        <div class="flex w-8/12 h-full m-auto  ">
+            <div class="block w-full m-auto  text-base text-right ">
                 <span class="inline-block font-semibold p-2 ">
                     <span>//</span> <span class="text-brand_primary">Email:</span> <a :href="'mailto:' + contentStore.email"
-                        class="text-brand_secondary cursor-pointer hover:opacity-75 transition ease-in-out">{{
+                        class="text-brand_secondary cursor-pointer hover:opacity-75">{{
                         contentStore.email }}</a>
                 </span>
             </div>
@@ -80,11 +80,11 @@ const lightDarkMode = () => {
     </div>
     <div class="h-fit w-full">
         <div class="
-            border-y border-brand_border
+             
             ">
             <div class="
             w-8/12 m-auto
-            border-x border-brand_border
+             
             ">
             <h1 class="
             text-4xl lg:text-6xl p-2 pb-12 
@@ -105,11 +105,11 @@ const lightDarkMode = () => {
             </div>
         </div>
         <div class="
-            border-b border-brand_border
+             
             ">
             <div class="
             w-8/12 m-auto
-            border-x border-brand_border
+             
             ">
                 <h2 class="
                     text-xl lg:text-2xl lg:leading-relaxed
@@ -122,18 +122,15 @@ const lightDarkMode = () => {
             </div>    
         </div>
         <div class="
-            border-b border-brand_border
+             
             ">
             <div class="
             w-8/12 m-auto
-            border-x border-brand_border
+             
             ">
                 <p class="
                     text-xl p-2 pb-4
                     ">
-                    <span>
-                        {{ state.time }}, 
-                    </span>
                     <span>
                         {{ month }}, 
                     </span>
@@ -143,15 +140,18 @@ const lightDarkMode = () => {
                     <span>
                         {{ contentStore.location }}.
                     </span>
+                    <span>
+                        {{ state.time }}
+                    </span>
                 </p>
             </div>
         </div>
         <div class="
-            border-b border-brand_border
+             
             ">
             <div class="
             w-8/12 m-auto
-            border-x border-brand_border
+             
             ">
                 <div class="
                     text-xl p-2 pb-4
@@ -164,7 +164,7 @@ const lightDarkMode = () => {
                         </span>
                         Links: 
                     </span>
-                    <a href="https://github.com/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out">
+                    <a href="https://github.com/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary ">
                         <!-- <i>GitHub</i> -->
                         <!-- Github -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -179,7 +179,7 @@ const lightDarkMode = () => {
                         </svg>
                         </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary transition ease-in-out">
+                    <a href="https://www.linkedin.com/in/mejasonatkinson/" target="_blank" class="hover:text-brand_secondary ">
                         <!-- <i>LinkedIn</i> -->
                         <!-- Linkedin -->
                         <span class="[&>svg]:h-5 [&>svg]:w-5 inline mx-2">
@@ -199,7 +199,7 @@ const lightDarkMode = () => {
         </div>
     </div>
     <div class="w-full h-full">
-        <div class="block w-8/12 h-full mx-auto border-x border-brand_border"></div>
+        <div class="block w-8/12 h-full mx-auto  "></div>
     </div>
 </div>
 </template>
